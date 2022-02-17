@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include custom_datacomm *.css
+recursive-include custom_datacomm *.csv
+recursive-include custom_datacomm *.html
+recursive-include custom_datacomm *.ico
+recursive-include custom_datacomm *.js
+recursive-include custom_datacomm *.json
+recursive-include custom_datacomm *.md
+recursive-include custom_datacomm *.png
+recursive-include custom_datacomm *.py
+recursive-include custom_datacomm *.svg
+recursive-include custom_datacomm *.txt
+recursive-exclude custom_datacomm *.pyc
