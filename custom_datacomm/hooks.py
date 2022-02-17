@@ -9,8 +9,19 @@ app_color = "grey"
 app_email = "armando.develop@gmail.com"
 app_license = "MIT"
 
+
+
+fixtures = [ 
+	{ "dt" : "Print Format", "filters": [  ["name", "in" , ("Recibo de Pago" , "Recibo de Pago Doble Pagina" , "Recibo de Pago en Bs" , "Recibo de Pago en Bs Doble Pagina" )   ] ]} 
+]
+
+
+
+
 # Includes in <head>
 # ------------------
+
+
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/custom_datacomm/css/custom_datacomm.css"
