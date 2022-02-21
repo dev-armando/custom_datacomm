@@ -1,0 +1,50 @@
+[
+ {
+  "content": "<img src=\"/assets/custom_datacomm/img/datacomm.png\" width=\"200px\">",
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Letter Head",
+  "footer": null,
+  "image": null,
+  "is_default": 0,
+  "letter_head_name": "datacomm",
+  "modified": "2022-02-21 14:48:19.466611",
+  "name": "datacomm",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "source": "HTML"
+ },
+ {
+  "content": "/assets/custom_datacomm/img/datacomm.png",
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Letter Head",
+  "footer": null,
+  "image": null,
+  "is_default": 0,
+  "letter_head_name": "Datacomm url",
+  "modified": "2022-02-17 17:22:07.473847",
+  "name": "Datacomm url",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "source": "HTML"
+ },
+ {
+  "content": "<img src=\"/assets/custom_datacomm/img/opensource.png\" width=\"300px\">",
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Letter Head",
+  "footer": null,
+  "image": null,
+  "is_default": 0,
+  "letter_head_name": "Opensource",
+  "modified": "2022-02-21 15:56:30.985919",
+  "name": "Opensource",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "source": "HTML"
+ }
+]
