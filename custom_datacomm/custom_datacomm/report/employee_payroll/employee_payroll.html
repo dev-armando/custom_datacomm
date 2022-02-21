@@ -1,14 +1,15 @@
 {%
 	let report_columns = report.get_columns_for_print();
 	console.log(report);
-    let header =  frappe.boot.letter_heads['Opensource'].header ; ; 
+    let header = ' '; 
     
 
 	if(filters.letter_head)
 		header = frappe.boot.letter_heads[filters.letter_head].header ; 
 	else if(frappe.defaults.get_default("letter_head"))
 		header = frappe.boot.letter_heads[strCapitalize(frappe.defaults.get_default("letter_head"))].header ; 
-	 
+	else 
+		header = frappe.boot.letter_heads['Opensource'].header ; 
 		
     function addWidth(size){
 		return `width='${size}px'`;
