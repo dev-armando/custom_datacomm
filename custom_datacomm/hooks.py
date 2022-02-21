@@ -15,6 +15,7 @@ fixtures = [
 	{ "dt" : "Print Format", "filters": [  ["name", "in" , ("Recibo de Pago" , "Recibo de Pago Doble Pagina" , "Recibo de Pago en Bs" , "Recibo de Pago en Bs Doble Pagina" )   ] ]} ,
 	{ "dt" : "Letter Head", "filters": [  ["creation", ">=" ,  "2022-02-14"  ]  ] } ,
 	"Translation" ,
+	{ "dt" : "Custom Field", "filters": [  ["fieldname", "in" ,  ("code_bill_transfer_reference" ,"number_of_banknotes" )   ]  ] } ,
 
 ]
 
