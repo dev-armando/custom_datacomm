@@ -51,34 +51,34 @@ def get_columns():
             "label": _("Start Date"),
             "fieldname": "start_date",
             "fieldtype": "Data",
-            "width": 150
+            "width": 100
         },
         {
             "label": _("End Date"),
             "fieldname": "end_date",
             "fieldtype": "Data",
-            "width": 150
+            "width": 100
         },
 
         {
             "label": _("Last Name"),
             "fieldname": "last_name",
             "fieldtype": "Data",
-            "width": 400
+            "width": 200
         },
 
         {
-            "label": _("First Name"),
+            "label": _("Name"),
             "fieldname": "first_name",
             "fieldtype": "Data",
-            "width": 400
+            "width": 200
         },
 
         {
             "label": _("DNI"),
             "fieldname": "dni",
             "fieldtype": "Data",
-            "width": 200
+            "width": 100
         },
 
         {
@@ -113,14 +113,14 @@ def get_columns():
             "label": _("number_of_banknotes"),
             "fieldname": "number_of_banknotes",
             "fieldtype": "Data",
-            "width": 200
+            "width": 100
         },
 
            {
             "label": _("code_bill_transfer_reference"),
             "fieldname": "code_bill_transfer_reference",
             "fieldtype": "Data",
-            "width": 200
+            "width": 500
         },
 
 
