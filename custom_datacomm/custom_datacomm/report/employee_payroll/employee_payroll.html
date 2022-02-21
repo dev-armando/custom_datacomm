@@ -1,0 +1,80 @@
+{%
+	let report_columns = report.get_columns_for_print();
+	console.log(report);
+    let header = ' '; 
+    
+
+	if(filters.letter_head)
+		header = frappe.boot.letter_heads[filters.letter_head].header ; 
+	else if(frappe.defaults.get_default("letter_head"))
+		header = frappe.boot.letter_heads[strCapitalize(frappe.defaults.get_default("letter_head"))].header ; 
+	else 
+		header = frappe.boot.letter_heads['Opensource'].header ; 
+		
+    function addWidth(size){
+		return `width='${size}px'`;
+	}
+
+%}
+
+
+<style>
+	.table-data {
+		font-size: 8px !important;
+	}
+</style>
+
+<br>
+<br>
+<div style="margin-bottom: 7px;" class="text-center">
+	{%= header %}
+</div>
+<h2 class="text-center">{%= __(report.report_name) %}</h2>
+<h5 class="text-center">  {%= data[0]['start_date'] %} -  {%= data[0]['end_date']  %} </h5>
+<hr>
+<table class="table table-bordered table-data">
+	<thead>
+		<tr>
+			{% for(var i=1, l=report_columns.length; i<l; i++) { %}
+
+				{%   if( report_columns[i].fieldname == 'start_date' ||  report_columns[i].fieldname == 'end_date'  ) 
+						continue;     
+				
+				%}
+
+				<th class="text-center" {%= addWidth(report_columns[i].width)  %}  >{%= report_columns[i].label %}</th>
+			{% } %}
+			<th class="text-center" {%= addWidth(500)  %}  >  Firma  </th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for(var j=0, k=data.length; j<k; j++) { %}
+			{%
+				var row = data[j];
+			%}
+			<tr>
+				{% for(var i=1, l=report_columns.length; i<l; i++) { %}
+
+					{% let fieldname = report_columns[i].fieldname; %}
+
+					{%  if( fieldname == 'start_date' ||  fieldname == 'end_date'  ) continue;  %}
+
+					<td class="  {%= report_columns[i].fieldtype=='Currency' ? 'text-right' : 'text-left'  %}">
+						
+						{% if (report_columns[i].fieldtype=='Currency' && !isNaN(row[fieldname])) { %}
+							{%= format_currency(row[fieldname]) %}
+						{% } else { %}
+							{% if (!is_null(row[fieldname])) { %}
+								{%= row[fieldname] %}
+							{% } %}
+						{% } %}
+					</td>
+				{% } %}
+				<td >
+
+				</td>
+			</tr>
+		{% } %}
+	</tbody>
+</table>
+
