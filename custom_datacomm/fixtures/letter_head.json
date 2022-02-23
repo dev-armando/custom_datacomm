@@ -8,12 +8,12 @@
   "image": null,
   "is_default": 0,
   "letter_head_name": "Datacomm",
-  "modified": "2022-02-22 09:16:42.121499",
+  "modified": "2022-02-22 16:58:14.692142",
   "name": "Datacomm",
   "parent": null,
   "parentfield": null,
   "parenttype": null,
-  "source": "Image"
+  "source": "HTML"
  },
  {
   "content": "<img src=\"http://165.227.197.236:3001//assets/custom_datacomm/img/opensource.png\" width=\"300px\">",
