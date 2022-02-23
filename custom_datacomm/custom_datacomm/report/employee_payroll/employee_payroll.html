@@ -22,7 +22,9 @@
 
 <style>
 	.table-data {
-		font-size: 12px !important;
+		font-size: 11px !important;
+		margin-left: 2.5cm;
+		margin-right: 1cm;
 	}
 </style>
 
@@ -34,7 +36,7 @@
 <h2 class="text-center">{%= __(report.report_name) %}</h2>
 <h5 class="text-center">  {%= data[0]['start_date'] %} -  {%= data[0]['end_date']  %} </h5>
 <hr>
-<table class="table table-bordered table-data">
+<table class="table-bordered table-data">
 	<thead>
 		<tr>
 			{% for(var i=1, l=report_columns.length; i<l; i++) { %}
@@ -46,7 +48,7 @@
 
 				<th class="text-center" {%= addWidth(report_columns[i].width)  %}  >{%= report_columns[i].label %}</th>
 			{% } %}
-			<th class="text-center" {%= addWidth(500)  %}  >  Firma  </th>
+			<th class="text-center" {%= addWidth(100)  %}  >  Firma  </th>
 		</tr>
 	</thead>
 	<tbody>
@@ -72,7 +74,7 @@
 						{% } %}
 					</td>
 				{% } %}
-				<td  width="50px" >
+				<td  >
 
 				</td>
 			</tr>

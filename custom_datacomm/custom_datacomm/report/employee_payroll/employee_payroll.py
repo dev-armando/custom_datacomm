@@ -64,14 +64,14 @@ def get_columns():
             "label": _("Last Name"),
             "fieldname": "last_name",
             "fieldtype": "Data",
-            "width": 150
+            "width": 220
         },
 
         {
             "label": _("Name"),
             "fieldname": "first_name",
             "fieldtype": "Data",
-            "width": 150
+            "width": 220
         },
 
         {
@@ -85,42 +85,42 @@ def get_columns():
             "label": _("Fortnightly Salary"),
             "fieldname": "fortnightly_salary",
             "fieldtype": "Currency",
-            "width": 100
+            "width": 90
         },
 
            {
             "label": _("Assignment"),
             "fieldname": "assignment",
             "fieldtype": "Currency",
-            "width": 100
+            "width": 90
         },
 
            {
             "label": _("Deduction"),
             "fieldname": "deduction",
             "fieldtype": "Currency",
-            "width": 100
+            "width": 90
         },
 
            {
             "label": _("Total"),
             "fieldname": "total",
             "fieldtype": "Currency",
-            "width": 100
+            "width": 90
         },
 
            {
             "label": _("number_of_banknotes"),
             "fieldname": "number_of_banknotes",
             "fieldtype": "Data",
-            "width": 100
+            "width": 200
         },
 
            {
             "label": _("code_bill_transfer_reference"),
             "fieldname": "code_bill_transfer_reference",
             "fieldtype": "Data",
-            "width": 500
+            "width": 300
         },
 
 
