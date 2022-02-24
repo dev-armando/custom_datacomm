@@ -30,7 +30,8 @@ def get_data(filters):
         tss.total_deduction as 'deduction',
         tss.net_pay 'total',
         COALESCE(   tss.number_of_banknotes,'-') as number_of_banknotes, 
-        COALESCE(   tss.code_bill_transfer_reference,'-') as code_bill_transfer_reference 
+        COALESCE(   tss.code_bill_transfer_reference,'-') as code_bill_transfer_reference ,
+        tss.status
 	
     from
         `tabSalary Slip` tss 
@@ -38,8 +39,8 @@ def get_data(filters):
         join `tabEmployee` te ON te.name  = tss.employee 
         
        join `tabSalary Detail` tsd ON tsd.parent = tss.name and tsd.abbr = 'SQ1'
-        where tss.status = 'Submitted'
-        AND tss.start_date = '{0}'
+        where
+         tss.start_date = '{0}'
     """.format(from_date)
 
     return frappe.db.sql(sql)
@@ -64,14 +65,14 @@ def get_columns():
             "label": _("Last Name"),
             "fieldname": "last_name",
             "fieldtype": "Data",
-            "width": 220
+            "width": 260
         },
 
         {
             "label": _("Name"),
             "fieldname": "first_name",
             "fieldtype": "Data",
-            "width": 220
+            "width": 260
         },
 
         {
@@ -113,14 +114,22 @@ def get_columns():
             "label": _("number_of_banknotes"),
             "fieldname": "number_of_banknotes",
             "fieldtype": "Data",
-            "width": 200
+            "width": 250
         },
 
            {
             "label": _("code_bill_transfer_reference"),
             "fieldname": "code_bill_transfer_reference",
             "fieldtype": "Data",
-            "width": 300
+            "width": 250
+        },
+
+
+         {
+            "label": _("Status"),
+            "fieldname": "status",
+            "fieldtype": "Data",
+            "width": 100
         },
 
 

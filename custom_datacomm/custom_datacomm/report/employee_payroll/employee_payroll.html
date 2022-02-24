@@ -35,13 +35,15 @@
 </div>
 <h2 class="text-center">{%= __(report.report_name) %}</h2>
 <h5 class="text-center">  {%= data[0]['start_date'] %} -  {%= data[0]['end_date']  %} </h5>
-<hr>
+
+<br>
+
 <table class="table-bordered table-data">
 	<thead>
 		<tr>
 			{% for(var i=1, l=report_columns.length; i<l; i++) { %}
 
-				{%   if( report_columns[i].fieldname == 'start_date' ||  report_columns[i].fieldname == 'end_date'  ) 
+				{%   if( report_columns[i].fieldname == 'start_date' ||  report_columns[i].fieldname == 'end_date' || report_columns[i].fieldname == 'status'  ) 
 						continue;     
 				
 				%}
@@ -61,7 +63,7 @@
 
 					{% let fieldname = report_columns[i].fieldname; %}
 
-					{%  if( fieldname == 'start_date' ||  fieldname == 'end_date'  ) continue;  %}
+					{%  if( fieldname == 'start_date' ||  fieldname == 'end_date'  || fieldname == 'status' ) continue;  %}
 
 					<td class="  {%= report_columns[i].fieldtype=='Currency' ? 'text-right' : 'text-left'  %}">
 						
@@ -81,4 +83,12 @@
 		{% } %}
 	</tbody>
 </table>
+
+
+{% if(data[0]['status'] == 'Draft'){  %}
+
+	<h1> Borrador </h1>
+{%  }  %}
+
+
 
