@@ -26,7 +26,8 @@ def get_data(filters):
         CONCAT(te.first_name , ' '   , te.middle_name)  as first_name, 
         te.dni ,
         tsd.amount  as 'fortnightly_salary',
-        tss.gross_pay - tsd.amount as 'assignment', 
+         COALESCE( phe.amount , 0) as 'overtime', 
+        tss.gross_pay - tsd.amount -  COALESCE( phe.amount , 0   ) as 'assignment', 
         tss.total_deduction as 'deduction',
         tss.net_pay 'total',
         COALESCE(   tss.number_of_banknotes,'-') as number_of_banknotes, 
@@ -39,7 +40,9 @@ def get_data(filters):
         join `tabEmployee` te ON te.name  = tss.employee 
         
        join `tabSalary Detail` tsd ON tsd.parent = tss.name and tsd.abbr = 'SQ1'
-        where
+       
+        left join `tabSalary Detail` phe ON phe.parent = tss.name and phe.abbr = 'PHE'
+        WHERE 
          tss.start_date = '{0}'
     """.format(from_date)
 
@@ -88,8 +91,14 @@ def get_columns():
             "fieldtype": "Currency",
             "width": 90
         },
+        {
+            "label": _("Overtime"),
+            "fieldname": "overtime",
+            "fieldtype": "Currency",
+            "width": 120
+        },
 
-           {
+        {
             "label": _("Assignment"),
             "fieldname": "assignment",
             "fieldtype": "Currency",
@@ -110,11 +119,11 @@ def get_columns():
             "width": 90
         },
 
-           {
-            "label": _("number_of_banknotes"),
+        {
+            "label": _("number_of_banknotes_abbr"),
             "fieldname": "number_of_banknotes",
             "fieldtype": "Data",
-            "width": 250
+            "width": 100
         },
 
            {
